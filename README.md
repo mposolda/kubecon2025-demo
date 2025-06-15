@@ -36,7 +36,7 @@ echo subject_token=$SUBJECT_TOKEN
 jwtp $SUBJECT_TOKEN
 ```
 
-You can notice token was issued to the initial-client (claim `azp`) and only audience is `requester-client` (Claim `aud`). See the [Keycloak documentation](https://www.keycloak.org/docs/latest/server_admin/index.html#audience-support) for the details on how the audiences can be set in the Keycloak token.
+Token claims are logged to the terminal. You can notice token was issued to the initial-client (claim `azp`) and only audience is `requester-client` (Claim `aud`). See the [Keycloak documentation](https://www.keycloak.org/docs/latest/server_admin/index.html#audience-support) for the details on how the audiences can be set in the Keycloak token.
 
 5) Token exchange request - without scope and audience parameters. 
 
@@ -57,7 +57,7 @@ echo exchanged_token=$EXCHANGED_TOKEN
 jwtp $EXCHANGED_TOKEN
 ```
 
-You can notice client is issued to the `requester-client` and only audience is `target-client1`. That audience is available because of the default client scope `default-scope1`, which is the default client scope for the `requester-client` and you can see it in the `scope` of the token. See [https://www.keycloak.org/docs/latest/server_admin/index.html#_client_scopes_linking](this page) for the details about the client scopes and their linking to clients.
+You can notice client is issued to the `requester-client` and only audience is `target-client1`. That audience is available because of the default client scope `default-scope1`, which is the default client scope for the `requester-client` and you can see it in the `scope` of the token. See [this page](https://www.keycloak.org/docs/latest/server_admin/index.html#_client_scopes_linking) for the details about the client scopes and their linking to clients.
 
 
 
