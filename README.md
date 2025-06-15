@@ -8,11 +8,11 @@ This is README for run the demo of the standard token exchange and fine-grained 
 ./kc.sh start-dev
 ```
 
-This is only for development/demo purpose, so Keycloak is running on http://localhost:8080 .
+So for this demo, assume that Keycloak is running on http://localhost:8080 .
 
 2) Open http://localhost:8080 and create the initial admin user. Then login to the admin console.
 
-3) Go to the screen for importing realms in the admin console and import [token-exchange-demo.json] file from this directory. See [https://www.keycloak.org/server/importExport#_importing_and_exporting_by_using_the_admin_console](Keycloak documentation) for more details about realm import. This initial realm is to create initial structure of the clients. Similar structure (with same names) is also described in the official [https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange-flow](Keycloak token exchange documentation).
+3) Go to the screen for importing realms in the admin console and import (token-exchange-demo.json) file from this directory. See (https://www.keycloak.org/server/importExport#_importing_and_exporting_by_using_the_admin_console)[Keycloak documentation] for more details about realm import. This initial realm is to create initial structure of the clients. Similar structure (with same names) is also described in the official [https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange-flow](Keycloak token exchange documentation).
 
 4) Now login from the command line. For the demo purpose, we just use OAuth2 Resource owner password credentials grant for the login from terminal. Assuming you have linux terminal with the utilities like `curl` and `jwtp`, you can run these commands for the initial user authentication and obtaining of the initial subject token
 
