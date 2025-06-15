@@ -100,18 +100,23 @@ The request will fail because audience `target-client3` is not available as an a
 6) Go to `Permissions` -> tab `Policies` -> `Create policy` -> select `User` -> and fill:
 
 Name: `John-user-policy`
+
 Users: select `john`
 
-And `Save`
+
+And click `Save`
 
 7) Go to `Permissions` -> tab `Permissions` -> `Create permission` -> Select `Users` -> Fill:
 
 Name: `edit-mike-permission`
+
 Authorization scopes: `manage`
+
 Enforce access to: `Specific users` and select user `mike`
+
 Button `Assign existing policies` and select `John-user-policy` created above
 
-Finally `Save`
+Finally click `Save`
 
 This means user `john` is able to edit user `mike`
 
