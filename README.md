@@ -2,6 +2,8 @@
 
 This is README for run the demo of the standard token exchange and fine-grained admin permissions used during KubeCon + CloudNativeCon Japan 2025.
 
+## Token exchange demo
+
 1) Run Keycloak 26.2.4 or newer on your laptop with the command like:
 
 ```
@@ -83,4 +85,36 @@ Parameter audience is used to filter audiences, so all other audiences besides t
 
 The request will fail because audience `target-client3` is not available as an audience. You can also see Warning in the server log about this.
 
+## Fine-grained admin permissions demo
 
+1) Repeat first two steps from the token-exchange demo above. So start the server and login to the admin console as an admin user.
+
+2) Import realm file [fgap-demo.json](fgap-demo.json) file from this directory. This is pre-created realm with only 3 users (`john`, `alice` and `mike`) and without any permissions set.
+
+3) In another browser tab (Let's call it tab 2), Go to http://localhost:8080/admin/fgap/console/ and login as `john` with password `john` . User `john` is able to login, but he does not have any permissions in the admin console.
+
+4) In the first tab, go to realm `fgap` -> tab `Users` -> select `john` -> tab `Role mappings` and assign user `john` role `view-users` of client `realm-management` . Go to tab 2 and reload. Now `john` is able to view all realm users. However attempt to edit any user would fail with 403 due the fact that `john` does not have permissions to manage any users.
+
+5) In the tab 1, Go to `Realm settings` -> and enable `Admin permissions` switch and save. Now tab `Permissions` should be displayed on the left side of the admin console.
+
+6) Go to `Permissions` -> tab `Policies` -> `Create policy` -> select `User` -> and fill:
+
+Name: `John-user-policy`
+Users: select `john`
+
+And `Save`
+
+7) Go to `Permissions` -> tab `Permissions` -> `Create permission` -> Select `Users` -> Fill:
+
+Name: `edit-mike-permission`
+Authorization scopes: `manage`
+Enforce access to: `Specific users` and select user `mike`
+Button `Assign existing policies` and select `John-user-policy` created above
+
+Finally `Save`
+
+This means user `john` is able to edit user `mike`
+
+8) In the tab 2, you can test that now `john` is able to update only user `mike`. He is not able to update other users. So for example, he is not able to update `alice`
+
+ 
