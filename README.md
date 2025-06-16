@@ -122,4 +122,8 @@ This means user `john` is able to edit user `mike`
 
 8) In the tab 2, you can test that now `john` is able to update only user `mike`. He is not able to update other users. So for example, he is not able to update `alice`
 
+## More documentation
+
+[https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange](https://www.keycloak.org/docs/latest/server_admin/index.html#audience-support)
+[https://www.keycloak.org/docs/latest/server_admin/index.html#_fine_grained_permissions](https://www.keycloak.org/docs/latest/server_admin/index.html#audience-support)
  
