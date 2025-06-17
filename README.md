@@ -124,6 +124,6 @@ This means user `john` is able to edit user `mike`
 
 ## More documentation
 
-[https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange](https://www.keycloak.org/docs/latest/server_admin/index.html#audience-support)
-[https://www.keycloak.org/docs/latest/server_admin/index.html#_fine_grained_permissions](https://www.keycloak.org/docs/latest/server_admin/index.html#audience-support)
+[Standard token exchange](https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange)
+[Fine-grained admin permissions](https://www.keycloak.org/docs/latest/server_admin/index.html#_fine_grained_permissions)
  
